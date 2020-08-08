@@ -6,8 +6,11 @@ var mongoose = require('mongoose');
 var flash = require('connect-flash');
 var passport = require('passport');
 var cookieparser = require('cookie-parser');
+var session = require('express-session');
 
 var app = express();
+
+
 
 
 app.use(bodyparser.json());
@@ -16,6 +19,34 @@ app.use(bodyparser.urlencoded({
 }));
 
 app.use(cookieparser());
+
+app.use(session({
+    secret: 'mysupersecret',
+    resave: false,
+    saveUninitialized: false,
+    
+}));
+app.use(function(req, res, next) {
+   req.session.cookie.maxAge = 180 * 60 * 1000; // 3 hours
+    next();
+});
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+require('./config/passport')(passport);
+
+// global variables
+app.use((req,res,next)=>{
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    next();
+});
+
+app.use((req, res, next)=> {
+    res.locals.login = req.isAuthenticated();
+    next();
+});
 
 
 // view engine
@@ -29,6 +60,9 @@ app.use(expressLayouts);
 // routes
 app.use('/',require('./routes/index'));
 app.use('/',require('./users/user'));
+
+
+
 
 // database connection
 

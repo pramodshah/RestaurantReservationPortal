@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var bcrypt = require('bcrypt-nodejs');
 var UserSchema =  new mongoose.Schema({
     name :{
         type: String,
@@ -18,6 +19,8 @@ var UserSchema =  new mongoose.Schema({
         default :Date.now
     }
 });
+
+
 
 var User = mongoose.model('User',UserSchema);
 

@@ -1,0 +1,11 @@
+.navbar-brand {
+    color:darkolivegreen;
+    font-size: 1.6rem;
+    font-weight: bolder;
+    
+}
+.nav-link{
+    color:brown;
+    font-size: 1.1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
