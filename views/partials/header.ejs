@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/css/header.css">
 <% if(login){%>
-  <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="/"><span style="color:green;">PS</span>RESTAURANT</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="opacity:0.5">
+    <a class="navbar-brand" href="/"><span style="color:brown;">PS</span>RESTAURANT</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -17,21 +17,23 @@
           <a class="nav-link" href="#">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Table Booking</a>
+          <a class="nav-link" href="/booking">Booking</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/view_bookings">View Your Bookings</a>
         </li>
         
       
       </ul>
       <div class="form-inline my-2 my-lg-0">
-        <a class="form-control mr-sm-2" href="/logout"></a>>
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        <a class="nav-link mr-sm-2" href="/logout">Logout</a>
       </div>
     </div>
   </nav>
 
 <%}%>
 <%if(!login){%>
-  <nav class="navbar navbar-expand-lg ">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="opacity:0.5">
     <a class="navbar-brand" href="/"><span style="color:brown;">PS</span>RESTAURANT</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -47,13 +49,18 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="/booking">Table Booking</a>
+          <a class="nav-link" href="/booking">Booking</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/view_bookings">View Your Bookings</a>
+        </li>
+        
        
       </ul>
-      <div class="form-inline my-2 my-lg-0">
-        <a class="nav-link mr-sm-2" href="/signin">Sign In</a>
-        <a class="nav-link my-2 my-sm-0" href="/signup">Sign Up</a>
+      <div class="form-inline ">
+        
+        <a class="nav-link mr-sm-2" href="/signin" style="text-decoration: none;">Sign In</a>
+        
       </div>
     </div>
   </nav>

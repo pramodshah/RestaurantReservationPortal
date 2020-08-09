@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
 var UserSchema =  new mongoose.Schema({
+    
     name :{
         type: String,
         required:true
@@ -14,7 +15,7 @@ var UserSchema =  new mongoose.Schema({
         type :String,
         required :true
     },
-    data :{
+    Date :{
         type :Date,
         default :Date.now
     }

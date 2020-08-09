@@ -2,8 +2,9 @@
 </br>
 </br>
 </br>
+
 <div class="container">
-  <%- include('./partials/messages') %>
+  
   
   <div class="row">
     
@@ -13,20 +14,23 @@
     
     <div class="col-sm-4">
       <form action="/signin" method="post">
-        
-          <legend>Sign In</legend>
+        <%- include('./partials/messages') %>
+          <legend style="color:white">Sign In</legend>
     
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
+            <label for="exampleInputEmail1" style="color:white">Email address</label>
             <input type="email" class="form-control"  name="email" placeholder="Enter email">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
+            <label for="exampleInputPassword1" style="color:white">Password</label>
             <input type="password" class="form-control"  name="password" placeholder="Password">
           </div>
           
           <button type="submit" class="btn btn-primary">Submit</button>
       </form>
+      <p class="lead mt-4" style="color:white">
+        No Account? <a href="/signup" style="font-weight: 900;color:white">Sign Up</a>
+      </p>
 
     </div>
     <div class="col-sm-4">

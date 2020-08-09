@@ -2,31 +2,33 @@
 </br>
 
 <div class="container">
-    <h3 style="text-align:center ;padding:30px;">Fill Booking Details</h3>
+    <h3 style="text-align:center ;padding:30px;">Update Your Booking Details</h3>
     <div class="row">
         
         <div class="col-sm-3">
 
         </div>
         <div class="col-sm-6">
-            <form action="/booking" method="post">
+            <form action="/update/booking" method="post">
+                <input type="hidden" name="id" value="<%= booking._id %>">
                 <div class="form-group">
-                    <label style="color:white"> Choose Date and Time</label>
-                    <input class="form-control" type = "datetime-local" name="time" >
+                    <label for="time">Enter Time</label>
+                    <input class="form-control" type = "datetime-local" name="time" value="<%= booking.time %>">
 
                 </div>
                 <div class="form-group">
-                   
-                    <input type="text" class="form-control"  name="name" placeholder="Enter Your Name">
+                    <label for="name">Enter Name</label>
+                    <input type="text" class="form-control"  name="name" placeholder="Enter Your Name" value="<%= booking.name %>">
                 </div>
                 <div class="form-group">
-                    
-                    <input type="text" class="form-control"  name="mobile" placeholder="Enter Mobile No.">
+                    <label for="mobile">Enter Mobile No. </label>
+                    <input type="text" class="form-control"  name="mobile" placeholder="Enter Mobile No." value="<%= booking.mobile %>">
                 </div>
                   
                   <div class="form-group">
+                    <label for="person">Enter number of person</label>
                         <select class="browser-default custom-select" name="person">
-                            <option selected value="0">Number Of Persons</option>
+                            <option selected value="<%= booking.person %>"><%= booking.person %></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -41,8 +43,9 @@
                     </div>
 
                     <div class="form-group">
-                        <select class="browser-default custom-select" name="table">
-                            <option selected value="0">Choose Table No.</option>
+                        <label for="table">Choose table No.</label>
+                        <select class="browser-default custom-select" name="table" value="<%= booking.table %>">
+                            <option selected value="<%= booking.table %>"><%= booking.table %></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -58,7 +61,7 @@
                   
                
     
-                <input type = "submit" class="btn btn-primary" value="Submit"/>
+                <input type = "submit" class="btn btn-primary" value="Update"/>
                 <input type = "reset"  class="btn btn-primary"value="Reset"/>
             </form>
 

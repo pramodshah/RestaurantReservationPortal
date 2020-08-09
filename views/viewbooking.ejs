@@ -1,0 +1,64 @@
+<%- include('./partials/header') %>
+<link rel="stylesheet" href="/css/viewbooking.css">
+</br>
+
+
+<main class="page-content">
+   
+     
+      
+
+      <div class="container">
+        <h3 style="text-align:center ;padding:30px;">Your Bookings</h3>
+        <%- include('./partials/messages') %>
+        <div class="row">
+            
+         <!-- <table class="table table-striped table-primary"> -->
+        <%if (bookings.length >0){ %>
+         <table class="table">
+        
+          <thead>
+            <tr>
+             
+              <th>Name</th>
+              <th>Mobile No.</th>
+              <th>Date & TIme</th>
+              <th>person</th>
+              <th>Table No.</th>
+              
+              
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <% bookings.forEach(function(booking){ %>
+            <tr>
+              
+              <td><%= booking.name %></td>
+              <td><%= booking.mobile %></td>
+              <td><%= booking.time %></td>
+              <td><%= booking.person %></td>
+              <td><%= booking.table %></td>
+              
+              
+              <td>
+                <a class="btn btn-secondary btn-xs" href="/view_booking_<%= booking._id %>"><i class="fa fa-eye"></i></a>
+                <a class="btn btn-primary btn-xs" href="/edit_booking_<%= booking._id %>"><i class="fa fa-edit"></i></a>
+                <a class="btn btn-danger btn-xs" href="/delete_booking_<%= booking._id %>"><i class="fa fa-trash"></i></a>
+      
+              </td>
+            </tr>
+            <% })}else{ %>
+              <tr>
+                  <td colspan="6"><h5 Style="color:white;background-color: brown;padding:20px;">No Bookings Yet!</5></td>
+                  
+                  
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+      </div>
+      
+  </main>

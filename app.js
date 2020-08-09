@@ -66,10 +66,20 @@ app.use('/',require('./users/user'));
 
 // database connection
 
-var uri = 'mongodb://localhost:27017/restaurant';
-mongoose.connect(uri,{useNewUrlParser:true,useUnifiedTopology:true},(err)=>{
+// var uri = 'mongodb://localhost:27017/restaurant';
+// mongoose.connect(uri,{useNewUrlParser:true,useUnifiedTopology:true},(err)=>{
+//     if(!err){
+//         console.log("Successfully connected to MongoDB.");
+//     }else{
+//         console.log(err);
+//     }
+// });
+
+
+const uri = "mongodb+srv://pramodshah:Prime123$5@cluster0.npajj.mongodb.net/restaurant?retryWrites=true&w=majority";
+var db = mongoose.connect(uri,{useNewUrlParser:true,useUnifiedTopology:true},(err)=>{
     if(!err){
-        console.log("Successfully connected to MongoDB.");
+        console.log("MongoDB Connected...");
     }else{
         console.log(err);
     }

@@ -34,8 +34,8 @@ router.post('/signup',(req,res)=>{
         errors.push({msg:"Passwords do not match"});
     }
 
-    if(password.length<6){
-        errors.push({msg:"Password length should atleast 6 characters"});
+    if(password.length<4){
+        errors.push({msg:"Password length should atleast 4 characters"});
     }
 
     if(errors.length>0){
@@ -112,7 +112,7 @@ router.post('/signin',(req,res,next)=>{
 
 router.get('/logout',(req,res)=>{
     req.logout();
-    req.flash('success_msg','You are succesfully logged out');
+    req.flash('success_msg','You are successfully logged out');
     res.redirect('/'); 
 });
 
