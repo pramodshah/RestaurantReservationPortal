@@ -14,7 +14,7 @@
     
     <div class="col-sm-4">
       <form action="/signin" method="post">
-        <%- include('./partials/messages') %>
+        <%- include('./partials/flashes') %>
           <legend style="color:white">Sign In</legend>
     
           <div class="form-group">
@@ -26,7 +26,7 @@
             <input type="password" class="form-control"  name="password" placeholder="Password">
           </div>
           
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary" style="background-color: #2D1E17">Submit</button>
       </form>
       <p class="lead mt-4" style="color:white">
         No Account? <a href="/signup" style="font-weight: 900;color:white">Sign Up</a>

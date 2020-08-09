@@ -78,6 +78,9 @@ router.get('/delete_booking_:id',ensureAuthenticated,(req,res)=>{
     
 });
 
+router.get('/about',(req,res)=>{
+    res.render('about');
+})
 
 
 
