@@ -67,6 +67,15 @@ router.post('/update/booking',ensureAuthenticated,(req,res)=>{
    
 });
 
+// router.get('/view_booking_:id',ensureAuthenticated,(req,res)=>{
+//     var id = req.params.id;
+//     Booking.findById(id,function(booking,err){
+//         if(err) throw err;
+//         console.log(booking);
+//         res.render('view_individual_booking',{booking:booking});
+//     });
+// });
+
 router.get('/delete_booking_:id',ensureAuthenticated,(req,res)=>{
     var id = req.params.id;
     Booking.findByIdAndDelete(id,function(err){
@@ -80,7 +89,9 @@ router.get('/delete_booking_:id',ensureAuthenticated,(req,res)=>{
 
 router.get('/about',(req,res)=>{
     res.render('about');
-})
+});
+
+
 
 
 

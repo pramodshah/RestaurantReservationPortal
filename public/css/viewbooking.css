@@ -1,7 +1,14 @@
 .table th{
     color:white;
+    font-size: 1rem;
+   font-family: cursive;
+   background-color: yellowgreen;
+   opacity: 0.8;
+    
 }
 
 .table td{
     color:white;
+    font-size: 1rem;
+    
 }

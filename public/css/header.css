@@ -4,9 +4,18 @@
     font-weight: bolder;
     
 }
+
+a:hover {
+    color:yellowgreen!important
+
+}
+
+
 .nav-link {
-    color:white;
+
+    color:whitesmoke!important;
     font-size: 1rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Courgette', cursive; 
     
 }
+
